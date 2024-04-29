@@ -26,9 +26,61 @@ class Car {
     }
 }
 
-const car1 = new Car('Suzuki', 'Solio', 2020, false)
+const car1 = new Car('Toyota', 'Camry', 2020, false)
 console.log(car1.isAvailable);
 
 class RentalCar {
-    
+    constructor(car, renterName, rentalStartDate, rentalEndDate){
+    this.car = car
+    this.renterName = renterName
+    this.rentalStartDate = rentalStartDate
+    this.rentalEndDate = rentalEndDate
+    }
+
+    calculateRentalDuration(){
+        const Duration = this.rentalEndDate - this.rentalStartDate
+        Rental = (Toyota, Aziz, 7-5-2024, 12-6-2024)
+        console.log(this.calculateRentalDuration(Duration))
+    }
 }
+
+const carInstance = new Car("Toyota","Camry",2020);
+const startDate = new Date("2024-04-25");
+const endDate = new Date ("2024-05-22")
+const rentInstance =new Rental(carInstance,startDate,endDate)
+const timeDuration =rentInstance.calculateRentalDuration()
+console.log("Rent duration",timeDuration,"days")
+
+
+// You are building a simple quiz app that contains multiple-choice questions. Your task is to create two JavaScript classes: Question and Quiz. The Question class will represent individual questions, and the Quiz class will manage a collection of questions and the user's progress. 
+// 1. Create a Question class with the following properties: 
+// ● text(string): The text of the question. 
+// ● options(array): An array containing the multiple-choice options. ● correctAnswer(string): The correct answer to the question. 
+// The Question class should also have a method called checkAnswer that takes a user's answer as a parameter and returns true if the answer is correct and false otherwise. 
+// 2. Create a Quiz class with the following properties: 
+// ● questions(array):An array of Question objects. 
+// ● currentQuestionIndex(number): The index of the current question in the questions array. 
+// ● score(number): The user’s current score. 
+// The Quiz class should have the following methods: 
+// ● addQuestion: Takes a Question object as a parameter and adds it to the questions array. 
+// ● nextQuestion: Advances to the next question in the quiz by incrementing the currentQuestionIndex. 
+// ● submitAnswer: Takes a user's answer as a parameter, checks if the answer is correct using the checkAnswer method of the Question class, and updates the score if the answer is correct.
+
+
+class Questions{
+    constructor(text,options,correctAnswer){
+    this.text = text;
+    this.options= options;
+    this.correctAnswer= correctAnswer;
+    }
+    checkCorrectAnswer(myAnswer){
+        return myAnswer===this.correctAnswer
+    }
+}
+const question1 = new Questions(
+    "Which country are you from"
+    ["2018","2023","2020"],
+    "2010"
+)
+console.log(question1.checkCorrectAnswer("2010"))
+console.log(question1.checkCorrectAnswer("2014"))
